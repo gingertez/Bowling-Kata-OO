@@ -18,5 +18,11 @@ namespace BowlingOOTests
         {
             Assert.That(roll.GetRollValue(), Is.EqualTo(expectedValue));
         }
+
+        [Test]
+        public void TestRollValueThrowsErrorOnInvalidCharacter()
+        {
+            Assert.Throws<InvalidOperationException>(() => 'A'.GetRollValue());
+        }
     }
 }
