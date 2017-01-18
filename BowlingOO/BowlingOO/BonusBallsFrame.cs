@@ -8,21 +8,30 @@ namespace BowlingOO
 {
     public class BonusBallsFrame : IFrame
     {
+        private List<int> _rolls = new List<int>();
         public BonusBallsFrame(string frameRolls)
         {
-        }
-
-        public int FirstRoll
-        {
-            get
+            foreach (var roll in frameRolls)
             {
-                throw new NotImplementedException();
+                _rolls.Add(RollValue(roll));
             }
         }
 
+        public int FirstRoll => _rolls[0];
+
         public int Score()
         {
-            throw new NotImplementedException();
+            return _rolls.Sum();
+        }
+
+        private int RollValue(char roll)
+        {
+            if (roll == '-')
+            {
+                return 0;
+            }
+
+            return roll - 48;
         }
     }
 }
