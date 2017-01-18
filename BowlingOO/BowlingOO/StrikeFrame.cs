@@ -10,12 +10,26 @@ namespace BowlingOO
     {
         private List<int> _nextRolls = new List<int>();
 
-        public int FirstRoll => 10;
-
-        public void AddNextRoll(int nextRoll)
+        public StrikeFrame(string frame1Score, string frame2Score)
         {
-            _nextRolls.Add(nextRoll);
+            var frame1 = FrameFactory.GetFrame(frame1Score);
+            if (frame1 != null)
+            {
+                _nextRolls.Add(frame1.Score());
+
+                if (frame1 is StrikeFrame)
+                {
+                    var frame2 = FrameFactory.GetFrame(frame2Score);
+                    
+                    if (frame2 != null)
+                    {
+                        _nextRolls.Add(frame2.FirstRoll);
+                    }
+                }
+            }
         }
+
+        public int FirstRoll => 10;
 
         public int Score()
         {

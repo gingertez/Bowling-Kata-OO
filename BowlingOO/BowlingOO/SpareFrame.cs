@@ -8,18 +8,19 @@ namespace BowlingOO
 {
     public class SpareFrame : IFrame
     {
-        public SpareFrame(string frameScore)
+        private int? _nextRoll = 0;
+        public SpareFrame(string frameScore, string nextFrameScore)
         {
             FirstRoll = RollValue(frameScore[0]);
+            _nextRoll = FrameFactory.GetFrame(nextFrameScore, new List<string>())?.FirstRoll;
         }
 
         public int FirstRoll { get; private set; }
 
-        public int NextRoll { private get; set; }
 
         public int Score()
         {
-            return 10 + NextRoll;
+            return 10 + (_nextRoll ?? 0);
         }
 
         private int RollValue(char roll)

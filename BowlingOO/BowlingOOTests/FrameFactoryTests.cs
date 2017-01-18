@@ -16,7 +16,7 @@ namespace BowlingOOTests
         [TestCase("12", typeof(NumericFrame))]
         public void TestCorrectFrameTypeCreated(string frameScore, Type expectedType)
         {
-            var createdFrame = FrameFactory.GetFrame(frameScore);
+            var createdFrame = FrameFactory.GetFrame(frameScore, new List<string>());
 
             Assert.That(createdFrame, Is.TypeOf(expectedType));
         }
