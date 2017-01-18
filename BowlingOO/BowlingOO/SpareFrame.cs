@@ -10,7 +10,7 @@ namespace BowlingOO
     {
         public int Score()
         {
-            return 0;
+            return 10;
         }
     }
 }
