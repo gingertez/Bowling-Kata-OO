@@ -10,7 +10,17 @@ namespace BowlingOO
     {
         public static IFrame GetFrame(string frameScore)
         {
-            throw new NotImplementedException();
+            if (frameScore == "X")
+            {
+                return new StrikeFrame();
+            }
+
+            if (frameScore[1] == '/')
+            {
+                return new SpareFrame();
+            }
+
+            return new NumericFrame(frameScore);
         }
     }
 }
