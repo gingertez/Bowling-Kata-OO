@@ -13,18 +13,15 @@ namespace BowlingOO
         public StrikeFrame(string frame1Score, string frame2Score)
         {
             var frame1 = FrameFactory.GetFrame(frame1Score);
-            if (frame1 != null)
-            {
-                _nextRolls.Add(frame1.Score());
+            _nextRolls.Add(frame1.Score());
 
-                if (frame1 is StrikeFrame)
-                {
-                    var frame2 = FrameFactory.GetFrame(frame2Score);
+            if (frame1 is StrikeFrame)
+            {
+                var frame2 = FrameFactory.GetFrame(frame2Score);
                     
-                    if (frame2 != null)
-                    {
-                        _nextRolls.Add(frame2.FirstRoll);
-                    }
+                if (frame2 != null)
+                {
+                    _nextRolls.Add(frame2.FirstRoll);
                 }
             }
         }

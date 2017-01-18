@@ -12,7 +12,7 @@ namespace BowlingOO
         {
             if (string.IsNullOrEmpty(frameScore))
             {
-                return null;
+                return new NumericFrame("--");
             }
 
             if (frameScore == "X")

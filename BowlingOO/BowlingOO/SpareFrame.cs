@@ -12,7 +12,7 @@ namespace BowlingOO
         public SpareFrame(string frameScore, string nextFrameScore)
         {
             FirstRoll = RollValue(frameScore[0]);
-            _nextRoll = FrameFactory.GetFrame(nextFrameScore, new List<string>())?.FirstRoll;
+            _nextRoll = FrameFactory.GetFrame(nextFrameScore, new List<string>()).FirstRoll;
         }
 
         public int FirstRoll { get; private set; }

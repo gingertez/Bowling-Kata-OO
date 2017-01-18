@@ -13,7 +13,7 @@ namespace BowlingOO
         List<IFrame> _frames = new List<IFrame>();
         public BowlingGame(string gameScore)
         {
-            var frameScores = gameScore.Split('|');
+            var frameScores = gameScore.Replace("||", "|").Split('|');
             var idx = 0;
             foreach (var frameScore in frameScores)
             {
