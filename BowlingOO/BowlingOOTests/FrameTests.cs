@@ -69,5 +69,12 @@ namespace BowlingOOTests
             var frame = new StrikeFrame("45", null);
             Assert.That(frame.Score(), Is.EqualTo(19));
         }
+
+        [Test]
+        public void TestBonusBallsFrameScoreWithNumericBalls()
+        {
+            var frame = new BonusBallsFrame("12");
+            Assert.That(frame.Score(), Is.EqualTo(3));
+        }
     }
 }

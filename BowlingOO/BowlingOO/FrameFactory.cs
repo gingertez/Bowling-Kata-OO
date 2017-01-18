@@ -29,6 +29,7 @@ namespace BowlingOO
                     nextFrames?.Count > 0 ? nextFrames[0] : null);
             }
 
+            
             return new NumericFrame(frameScore);
         }
     }
