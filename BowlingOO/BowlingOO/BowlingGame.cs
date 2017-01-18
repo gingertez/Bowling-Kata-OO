@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,6 +20,7 @@ namespace BowlingOO
             }
 
             AddNextRollToSpares();
+            AddNextTwoRollsToStrikes();
         }
 
         public int Score()
@@ -35,6 +37,20 @@ namespace BowlingOO
                 {
                     var nextFrame = _frames[idx + 1];
                     (frame as SpareFrame).NextRoll = nextFrame.FirstRoll;
+                }
+                idx++;
+            }
+        }
+
+        private void AddNextTwoRollsToStrikes()
+        {
+            var idx = 0;
+            foreach (var frame in _frames)
+            {
+                if (frame is StrikeFrame && idx != _frames.Count - 1)
+                {
+                    var nextFrame = _frames[idx + 1];
+                    (frame as StrikeFrame).AddNextRoll(nextFrame.Score());
                 }
                 idx++;
             }
