@@ -9,13 +9,15 @@ namespace BowlingOO
 {
     public class BowlingGame
     {
+        List<IFrame> _frames = new List<IFrame>();
         public BowlingGame(string gameScore)
         {
+            _frames.Add(new NumericFrame(gameScore));
         }
 
         public int Score()
         {
-            return 0;
+            return _frames.Select(x => x.Score()).Sum();
         }
     }
 }

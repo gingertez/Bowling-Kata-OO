@@ -15,7 +15,7 @@ namespace BowlingOOTests
         [TestCase("12", 3)]
         public void TestGameScore(string gameScore, int expectedScore)
         {
-            var game = new BowlingGame("");
+            var game = new BowlingGame(gameScore);
             var score = game.Score();
             Assert.That(score, Is.EqualTo(expectedScore));
         }
