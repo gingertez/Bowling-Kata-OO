@@ -11,12 +11,12 @@ namespace BowlingOO
     {
         public BowlingGame(string gameScore)
         {
-            
+
         }
 
         public int Score()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
