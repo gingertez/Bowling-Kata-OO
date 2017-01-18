@@ -51,6 +51,11 @@ namespace BowlingOO
                 {
                     var nextFrame = _frames[idx + 1];
                     (frame as StrikeFrame).AddNextRoll(nextFrame.Score());
+                    if (nextFrame is StrikeFrame && idx != _frames.Count - 2)
+                    {
+                        var nextFrame2 = _frames[idx + 2];
+                        (frame as StrikeFrame).AddNextRoll(nextFrame2.FirstRoll);
+                    }
                 }
                 idx++;
             }
