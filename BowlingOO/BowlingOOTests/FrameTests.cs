@@ -18,5 +18,14 @@ namespace BowlingOOTests
             var frame = new Frame(frameScore);
             Assert.That(frame.Score(), Is.EqualTo(expectedScore));
         }
+
+        [TestCase("--", 0)]
+        [TestCase("-2", 2)]
+        [TestCase("3-", 3)]
+        public void TestFrameScoreWhenThereAreGutterBalls(string frameScore, int expectedScore)
+        {
+            var frame = new Frame(frameScore);
+            Assert.That(frame.Score(), Is.EqualTo(expectedScore));
+        }
     }
 }
