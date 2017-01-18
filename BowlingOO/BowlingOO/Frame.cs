@@ -8,23 +8,28 @@ namespace BowlingOO
 {
     public class Frame
     {
-        private List<string> _rolls = new List<string>();
+        private List<int> _rolls = new List<int>();
         public Frame(string frameRolls)
         {
             foreach (var roll in frameRolls)
             {
-                _rolls.Add(roll.ToString());
+                _rolls.Add(RollValue(roll));
             }
         }
 
         public int Score()
         {
-            var score = 0;
-            foreach (var roll in _rolls)
+            return _rolls.Sum();
+        }
+
+        private int RollValue(char roll)
+        {
+            if (roll == '-')
             {
-                score += int.Parse(roll);
+                return 0;
             }
-            return score;
+
+            return roll - 48;
         }
     }
 }
