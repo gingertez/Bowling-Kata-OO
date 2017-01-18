@@ -69,34 +69,5 @@ namespace BowlingOOTests
             var frame = new StrikeFrame("45", null);
             Assert.That(frame.Score(), Is.EqualTo(19));
         }
-
-        [Test]
-        public void TestBonusBallsFrameScoreWithNumericBalls()
-        {
-            var frame = new BonusBallsFrame("12");
-            Assert.That(frame.Score(), Is.EqualTo(3));
-        }
-
-        [Test]
-        public void TestBonusBallsFrameScoreWithStrike()
-        {
-            var frame = new BonusBallsFrame("X2");
-            Assert.That(frame.Score(), Is.EqualTo(12));
-        }
-
-        [Test]
-        public void TestBonusBallsFrameScoreWith2Strikes()
-        {
-            var frame = new BonusBallsFrame("XX");
-            Assert.That(frame.Score(), Is.EqualTo(20));
-        }
-
-        [TestCase("12", 1)]
-        [TestCase("X2", 10)]
-        public void TestConusBallsFrameFirstRoll(string frameScore, int expectedRollValue)
-        {
-            var frame = new BonusBallsFrame(frameScore);
-            Assert.That(frame.FirstRoll, Is.EqualTo(expectedRollValue));
-        }
     }
 }
