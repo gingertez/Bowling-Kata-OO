@@ -24,7 +24,12 @@ namespace BowlingOO
 
         public int Score()
         {
-            return _frames.Select(x => x.Score()).Sum();
+            var score = _frames.Select(x => x.Score()).Sum();
+            if (_frames.Count == 11)
+            {
+                score -= _frames[10].Score();
+            }
+            return score;
         }
     }
 }
