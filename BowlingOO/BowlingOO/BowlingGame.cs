@@ -12,7 +12,11 @@ namespace BowlingOO
         List<IFrame> _frames = new List<IFrame>();
         public BowlingGame(string gameScore)
         {
-            _frames.Add(FrameFactory.GetFrame(gameScore));
+            var frameScores = gameScore.Split('|');
+            foreach (var frameScore in frameScores)
+            {
+                _frames.Add(FrameFactory.GetFrame(frameScore));
+            }
         }
 
         public int Score()
