@@ -11,11 +11,12 @@ namespace BowlingOOTests
     [TestFixture]
     public class FrameTests
     {
-        [Test]
-        public void TestFrameScoreWhenFrameIsOnlyNumbers()
+        [TestCase("12", 3)]
+        [TestCase("81", 9)]
+        public void TestFrameScoreWhenFrameIsOnlyNumbers(string frameScore, int expectedScore)
         {
-            var frame = new Frame("12");
-            Assert.That(frame.Score(), Is.EqualTo(3));
+            var frame = new Frame(frameScore);
+            Assert.That(frame.Score(), Is.EqualTo(expectedScore));
         }
     }
 }
