@@ -8,9 +8,10 @@ namespace BowlingOO
 {
     public static class RollHelper
     {
+        public const int ASCII_OFFSET = 48;
         public static int GetRollValue(this char roll)
         {
-            throw new NotImplementedException();
+            return roll - ASCII_OFFSET;
         }
     }
 }
