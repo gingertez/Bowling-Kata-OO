@@ -11,7 +11,7 @@ namespace BowlingOO
         public int NextRoll { private get; set; }
         public int Score()
         {
-            return 10;
+            return 10 + NextRoll;
         }
     }
 }
