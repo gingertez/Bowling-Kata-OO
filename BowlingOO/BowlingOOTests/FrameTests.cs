@@ -48,5 +48,13 @@ namespace BowlingOOTests
             var frame = new StrikeFrame();
             Assert.That(frame.Score(), Is.EqualTo(10));
         }
+
+        [Test]
+        public void TestStrikeFrameScoreWithOneAdditionalRoll()
+        {
+            var frame = new StrikeFrame();
+            frame.AddNextRoll(4);
+            Assert.That(frame.Score(), Is.EqualTo(14));
+        }
     }
 }
