@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BowlingOO
 {
-    public class NumericFrame
+    public class NumericFrame : IFrame
     {
         private List<int> _rolls = new List<int>();
         public NumericFrame(string frameRolls)

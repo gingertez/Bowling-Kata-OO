@@ -15,7 +15,7 @@ namespace BowlingOOTests
         [TestCase("81", 9)]
         public void TestFrameScoreWhenFrameIsOnlyNumbers(string frameScore, int expectedScore)
         {
-            var frame = new Frame(frameScore);
+            var frame = new NumericFrame(frameScore);
             Assert.That(frame.Score(), Is.EqualTo(expectedScore));
         }
 
@@ -24,8 +24,15 @@ namespace BowlingOOTests
         [TestCase("3-", 3)]
         public void TestFrameScoreWhenThereAreGutterBalls(string frameScore, int expectedScore)
         {
-            var frame = new Frame(frameScore);
+            var frame = new NumericFrame(frameScore);
             Assert.That(frame.Score(), Is.EqualTo(expectedScore));
+        }
+
+        [Test]
+        public void TestSpareFrameScore()
+        {
+            var frame = new SpareFrame();
+            Assert.That(frame.Score(), Is.EqualTo(10));
         }
     }
 }
