@@ -17,11 +17,26 @@ namespace BowlingOO
             {
                 _frames.Add(FrameFactory.GetFrame(frameScore));
             }
+
+            AddNextRollToSpares();
         }
 
         public int Score()
         {
             return _frames.Select(x => x.Score()).Sum();
+        }
+
+        private void AddNextRollToSpares()
+        {
+            var idx = 0;
+            foreach (var frame in _frames)
+            {
+                if (frame is SpareFrame && idx != _frames.Count -1)
+                {
+                    (frame as SpareFrame).NextRoll = (_frames[idx + 1] as NumericFrame).FirstRoll;
+                }
+                idx++;
+            }
         }
     }
 }

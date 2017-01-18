@@ -17,6 +17,8 @@ namespace BowlingOO
             }
         }
 
+        public int FirstRoll => _rolls[0];
+
         public int Score()
         {
             return _rolls.Sum();
