@@ -12,12 +12,12 @@ namespace BowlingOO
 
         public void AddNextRoll(int nextRoll)
         {
-            
+            _nextRolls.Add(nextRoll);
         }
 
         public int Score()
         {
-            return 10;
+            return 10 + _nextRolls.Sum();
         }
     }
 }
