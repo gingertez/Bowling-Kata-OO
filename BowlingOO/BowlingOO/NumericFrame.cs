@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BowlingOO
 {
-    public class Frame
+    public class NumericFrame
     {
         private List<int> _rolls = new List<int>();
-        public Frame(string frameRolls)
+        public NumericFrame(string frameRolls)
         {
             foreach (var roll in frameRolls)
             {
