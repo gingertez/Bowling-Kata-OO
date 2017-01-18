@@ -29,7 +29,11 @@ namespace BowlingOO
                     nextFrames?.Count > 0 ? nextFrames[0] : null);
             }
 
-            
+            if (frameScore.Length == 1 || frameScore.IndexOf('X') > -1)
+            {
+                return new BonusBallsFrame(frameScore);
+            }            
+
             return new NumericFrame(frameScore);
         }
     }

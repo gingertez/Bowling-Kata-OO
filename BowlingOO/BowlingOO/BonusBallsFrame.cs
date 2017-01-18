@@ -31,6 +31,11 @@ namespace BowlingOO
                 return 0;
             }
 
+            if (roll == 'X')
+            {
+                return 10;
+            }
+
             return roll - 48;
         }
     }
