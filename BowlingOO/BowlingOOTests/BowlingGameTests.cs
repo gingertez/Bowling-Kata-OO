@@ -11,7 +11,6 @@ namespace BowlingOOTests
     [TestFixture]
     public class BowlingGameTests
     {
-        [TestCase("", 0)]
         [TestCase("12", 3)]
         [TestCase("X", 10)]
         [TestCase("3/", 10)]
