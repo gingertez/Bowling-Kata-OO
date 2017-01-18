@@ -33,7 +33,8 @@ namespace BowlingOO
             {
                 if (frame is SpareFrame && idx != _frames.Count -1)
                 {
-                    (frame as SpareFrame).NextRoll = (_frames[idx + 1] as NumericFrame).FirstRoll;
+                    var nextFrame = _frames[idx + 1];
+                    (frame as SpareFrame).NextRoll = nextFrame.FirstRoll;
                 }
                 idx++;
             }

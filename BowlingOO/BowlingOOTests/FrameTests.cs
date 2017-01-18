@@ -31,15 +31,22 @@ namespace BowlingOOTests
         [Test]
         public void TestSpareFrameScore()
         {
-            var frame = new SpareFrame();
+            var frame = new SpareFrame("12");
             Assert.That(frame.Score(), Is.EqualTo(10));
         }
 
         [Test]
         public void TestSpareFrameScoreWithNextRoll()
         {
-            var frame = new SpareFrame {NextRoll = 4};
+            var frame = new SpareFrame("12") {NextRoll = 4};
             Assert.That(frame.Score(), Is.EqualTo(14));
+        }
+
+        [Test]
+        public void TestSpareFrameFirstToll()
+        {
+            var frame = new SpareFrame("12");
+            Assert.That(frame.FirstRoll, Is.EqualTo(1));
         }
 
         [Test]

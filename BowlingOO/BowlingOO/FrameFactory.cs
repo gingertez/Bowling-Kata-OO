@@ -17,7 +17,7 @@ namespace BowlingOO
 
             if (frameScore[1] == '/')
             {
-                return new SpareFrame();
+                return new SpareFrame(frameScore);
             }
 
             return new NumericFrame(frameScore);

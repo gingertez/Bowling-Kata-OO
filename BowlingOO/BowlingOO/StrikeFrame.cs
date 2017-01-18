@@ -10,6 +10,8 @@ namespace BowlingOO
     {
         private List<int> _nextRolls = new List<int>();
 
+        public int FirstRoll => 10;
+
         public void AddNextRoll(int nextRoll)
         {
             _nextRolls.Add(nextRoll);
