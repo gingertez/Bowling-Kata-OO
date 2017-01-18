@@ -38,9 +38,15 @@ namespace BowlingOOTests
         [Test]
         public void TestSpareFrameScoreWithNextRoll()
         {
-            var frame = new SpareFrame();
-            frame.NextRoll = 4;
+            var frame = new SpareFrame {NextRoll = 4};
             Assert.That(frame.Score(), Is.EqualTo(14));
+        }
+
+        [Test]
+        public void TestStrikeFrameScore()
+        {
+            var frame = new StrikeFrame();
+            Assert.That(frame.Score(), Is.EqualTo(10));
         }
     }
 }
