@@ -13,7 +13,7 @@ namespace BowlingOO
         {
             foreach (var roll in frameRolls)
             {
-                _rolls.Add(RollValue(roll));
+                _rolls.Add(roll.GetRollValue());
             }
         }
 
@@ -22,21 +22,6 @@ namespace BowlingOO
         public int Score()
         {
             return _rolls.Sum();
-        }
-
-        private int RollValue(char roll)
-        {
-            if (roll == '-')
-            {
-                return 0;
-            }
-
-            if (roll == 'X')
-            {
-                return 10;
-            }
-
-            return roll - 48;
         }
     }
 }
