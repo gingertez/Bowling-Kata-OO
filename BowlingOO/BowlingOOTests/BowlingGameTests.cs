@@ -23,6 +23,7 @@ namespace BowlingOOTests
         [TestCase("X|X|1-", 33)]
         [TestCase("X|X|X|1-", 63)]
         [TestCase("1-|1-|1-|1-|1-|1-|1-|1-|1-|1-||", 10)]
+        [TestCase("5/|5/|5/|5/|5/|5/|5/|5/|5/|5/||5", 150)]
         public void TestGameScore(string gameScore, int expectedScore)
         {
             var game = new BowlingGame(gameScore);

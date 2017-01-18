@@ -22,7 +22,7 @@ namespace BowlingOO
                     nextFrames?.Count > 1 ? nextFrames[1] : null);
             }
 
-            if (frameScore[1] == '/')
+            if (frameScore.Length > 1 && frameScore[1] == '/')
             {
                 return new SpareFrame(
                     frameScore, 
