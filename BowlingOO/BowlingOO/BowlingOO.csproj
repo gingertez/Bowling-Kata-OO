@@ -50,6 +50,7 @@
     <Compile Include="IFrame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RollHelper.cs" />
     <Compile Include="StrikeFrame.cs" />
     <Compile Include="SpareFrame.cs" />
   </ItemGroup>
