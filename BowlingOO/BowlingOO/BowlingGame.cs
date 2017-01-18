@@ -12,7 +12,14 @@ namespace BowlingOO
         List<IFrame> _frames = new List<IFrame>();
         public BowlingGame(string gameScore)
         {
-            _frames.Add(new NumericFrame(gameScore));
+            if (gameScore == "X")
+            {
+                _frames.Add(new StrikeFrame());
+            }
+            else
+            {
+                _frames.Add(new NumericFrame(gameScore));
+            }
         }
 
         public int Score()
