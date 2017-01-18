@@ -8,6 +8,7 @@ namespace BowlingOO
 {
     public class SpareFrame : IFrame
     {
+        public int NextRoll { private get; set; }
         public int Score()
         {
             return 10;
