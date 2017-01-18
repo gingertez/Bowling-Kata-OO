@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BowlingGame.cs" />
+    <Compile Include="FrameFactory.cs" />
     <Compile Include="NumericFrame.cs" />
     <Compile Include="IFrame.cs" />
     <Compile Include="Program.cs" />
